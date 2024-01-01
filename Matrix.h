@@ -26,11 +26,11 @@ public:
 	Matrix operator-(const Matrix& other);
 	Matrix operator*(const Matrix& other);
 	Matrix operator*(const double number);
-	Matrix operator/(const Matrix& other);
 	Matrix operator/(const double number);
 	double *operator[] (const size_t _row)const;
 public:
 	// public methods
+	void RebuildMatrix(size_t _row, size_t _columns);// delete old data and build matrix with new params
 	bool IsMayAddOrSubstract(const Matrix& other);// may the matrix be added or subtracted 
 	bool IsMayMultiplied(const Matrix& other);// may the matrix be multiplied or divided
 	void Transposition();// matrix transposition

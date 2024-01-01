@@ -57,5 +57,12 @@ void main()
 	func(std::move(matrix2));
 	func(matrix2);
 
+	matrix2.RebuildMatrix(2,2);
+	matrix2[0][0] = 1; matrix2[0][1] = 2;
+	matrix2[1][0] = 3; matrix2[1][1] = 4;
+	
+	std::cout << matrix2;
+	std::cout << "\n";
+
 	system("pause");
 }

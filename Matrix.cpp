@@ -2,12 +2,9 @@
 //constructors
 Matrix::Matrix()
 {}
-Matrix::Matrix(size_t _row, size_t _columns) :Columns(_columns), Rows(_row)
+Matrix::Matrix(size_t _row, size_t _columns)
 {
-	if (!Columns || !Rows)
-		return;
-	InitMatrix();
-	ZeroFillMatrix();
+	RebuildMatrix(_row, _columns);
 }
 //copy constructor
 Matrix::Matrix(const Matrix& other)
@@ -193,4 +190,14 @@ std::ostream& operator<< (std::ostream& out, const Matrix& _matrix)
 		out << "\n";
 	}
 	return out;
+}
+// delete old data and build matrix with new params
+void Matrix::RebuildMatrix(size_t _row, size_t _columns)
+{
+	DeleteMatrix();
+	Columns = _columns; Rows = _row;
+	if (!Columns || !Rows)
+		return;
+	InitMatrix();
+	ZeroFillMatrix();
 }
