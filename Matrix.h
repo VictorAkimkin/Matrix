@@ -30,6 +30,8 @@ public:
 	double *operator[] (const size_t _row)const;
 public:
 	// public methods
+	size_t GetRowsNum(); // returns Rows number of the matrix
+	size_t GetColumnsNum(); // returns Columns number of the matrix
 	void RebuildMatrix(size_t _row, size_t _columns);// delete old data and build matrix with new params
 	bool IsMayAddOrSubstract(const Matrix& other);// may the matrix be added or subtracted 
 	bool IsMayMultiplied(const Matrix& other);// may the matrix be multiplied or divided

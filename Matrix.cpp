@@ -34,6 +34,16 @@ Matrix::~Matrix()
 	DeleteMatrix();
 }
 //methods
+// returns Rows number of the matrix
+size_t Matrix::GetRowsNum()
+{
+	return Rows;
+}
+// returns Columns number of the matrix
+size_t Matrix::GetColumnsNum()
+{
+	return Columns;
+}
 // delete old data and build matrix with new params
 void Matrix::RebuildMatrix(size_t _row, size_t _columns)
 {
