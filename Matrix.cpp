@@ -34,6 +34,16 @@ Matrix::~Matrix()
 	DeleteMatrix();
 }
 //methods
+// delete old data and build matrix with new params
+void Matrix::RebuildMatrix(size_t _row, size_t _columns)
+{
+	DeleteMatrix();
+	Columns = _columns; Rows = _row;
+	if (!Columns || !Rows)
+		return;
+	InitMatrix();
+	ZeroFillMatrix();
+}
 // create a matrix
 double** Matrix::CreateMatrix(size_t _rows, size_t _columns)
 {
@@ -190,14 +200,4 @@ std::ostream& operator<< (std::ostream& out, const Matrix& _matrix)
 		out << "\n";
 	}
 	return out;
-}
-// delete old data and build matrix with new params
-void Matrix::RebuildMatrix(size_t _row, size_t _columns)
-{
-	DeleteMatrix();
-	Columns = _columns; Rows = _row;
-	if (!Columns || !Rows)
-		return;
-	InitMatrix();
-	ZeroFillMatrix();
 }
